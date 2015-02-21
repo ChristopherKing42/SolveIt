@@ -24,5 +24,31 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
     5 - AAS/SAA
     6 - ASA
     7 - Impossible*/
+    for (int c = 0; c<3; c++)
+    {
+    //dan types here
+
+    /*olda1=a1;
+    a1=a2; a2=a3; a3=olda1;
+    olds1=s1;
+    s1=s2; s3=s2; s3=olds1;*/
+
+  }
+  //BASIC SOLVING METHODS
+
+    if(!a1&&s1&&s2&&s3)//if a1 isnt already found, find it
+    {
+      a1=acos((pow(s2,2)+pow(s3,2)-pow(s1,2))/(2*s2*s3));
+    }
+    if(!a2&&s1&&s2&&s3)
+    {
+      a2=acos((pow(s1,2)+pow(s3,2)-pow(s2,2))/(2*s1*s3));
+    }
+    if(!a3&&s1&&s2&&s3)
+    {
+      a3=(180-a1-a2);
+    }
+    if()
+  }
 
 }
