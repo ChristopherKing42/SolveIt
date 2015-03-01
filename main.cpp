@@ -429,4 +429,17 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
       *a=(*c)*(sin(*alpha)/sin(*gamma));
       *b=(*c)*(sin(*beta)/sin(*gamma));
     }
+    if(a1&&a2&&a3&&!s1&&!s2&&!s3)
+    {
+      //AAA - impossible
+      cout << "Not possible." << endl;
+    }
+    //output results for debug porpoises:
+    cout << "a1: " << a1 << endl;
+    cout << "a2: " << a2 << endl;
+    cout << "a3: " << a3 << endl;
+    cout << "s1: " << s1 << endl;
+    cout << "s2: " << s2 << endl;
+    cout << "s3: " << s3 << endl;
+    cout << "Done." << endl;
   }
