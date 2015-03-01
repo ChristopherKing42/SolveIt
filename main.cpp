@@ -43,15 +43,33 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
     {
       a1=acos((pow(s2,2)+pow(s3,2)-pow(s1,2))/(2*s2*s3));
     }
-    if(!a2&&s1&&s2&&s3)
+    if(!a2&&s1&&s2&&s3)//if a2 isnt already found, find it
     {
       a2=acos((pow(s1,2)+pow(s3,2)-pow(s2,2))/(2*s1*s3));
     }
-    if(!a3&&s1&&s2&&s3)
+    if(!a3&&s1&&s2&&s3)//if a3 isnt found, find
     {
       a3=(180-a1-a2);
     }
-    if()
+    //if((s1&&s2&&a3)||(s2&&s3&&a1)||(s1&&s3&&a2))
+    if(s1&&s2&&a3)
+    {
+      if(!s3)
+      {
+        s3=(sqrt(pow(s1,2)+pow(s2,2)-2*s1*s2*cos(a3)));
+      }
+      if(!a1)
+      {
+        a1=acos((pow(s2,2)+pow(s3,2)-pow(s1,2))/2*s2*s3);
+      }
+      if(!a2)
+      {
+        a2=180-a1-a3;
+      }
+    }
+    
+
+
   }
 
 }
