@@ -36,3 +36,6 @@
 #Compiling
 makefile
 main
+
+#Mac Stuff
+.DS_Store
