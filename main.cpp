@@ -188,5 +188,3 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
 
 
   }
-
-}

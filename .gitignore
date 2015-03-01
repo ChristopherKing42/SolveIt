@@ -28,5 +28,6 @@
 *.app
 
 # Code::Blocks
-*.depend  
-*.layout 
+*.depend
+*.layout
+makefile
