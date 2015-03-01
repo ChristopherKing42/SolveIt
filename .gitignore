@@ -28,12 +28,8 @@
 *.app
 
 # Code::Blocks
-<<<<<<< HEAD
+
 *.depend
 *.layout
 makefile
-=======
-*.depend
-*.layout
 /bin
->>>>>>> origin/master
