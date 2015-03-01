@@ -4,16 +4,25 @@
 
 using namespace std;
 
-void triangle_solver(float,float,float,float,float,float);//Prototype function for solving triangles, 6 floats for 3 sides and 3 angles
-void polygon_solver(const int length, const float arr[][2]);
+void triangle_solver(float*,float*,float*,float*,float*,float*);//Prototype function for solving triangles, 6 floats for 3 sides and 3 angles
+void polygon_solver(const int length, float arr[][2]);
 int main()
 {
     cout << "Hello world!" << endl;
     return 0;
 }
 
-void polygon_solver(const int length, const float arr[][2]){}
+void polygon_solver(const int length, float arr[][2])
+{
+    float *a1 = NULL;
+    float *a3 = NULL;
+    float *s2 = NULL;
+    triangle_solver(a1, &arr[1][1], a3, &arr[1][0], s2, &arr[0][1]);
+}
+void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s3)
+{
 
+}
 #if 0
 void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s3)
 {
