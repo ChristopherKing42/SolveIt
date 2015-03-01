@@ -226,6 +226,83 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
         a1=beta;
       }*/
     }//end of ALT METHOD
-
+    if((s1&&s2&&a1)||(s2&&s3&&a2)||(s3&&s1&&a3))
+    {
+      //SSA - 2 sides and a non-included angle
+      float *a,*b,*c,*alpha,*beta,*gamma;
+      if(s1&&s2&&a1)
+      {
+        if(s3)
+        {
+          a=s3;
+        }
+        b=s1;
+        c=s2;
+        if(a3)
+        {
+          alpha=a3;
+        }
+        beta=a1;
+        if(a2)
+        {
+          gamma=a2;
+        }
+      }
+      if(s2&&s3&&a2)
+      {
+        if(s1)
+        {
+          a=s1;
+        }
+        b=s2;
+        c=s3;
+        if(a1)
+        {
+          alpha=a1;
+        }
+        beta=a2;
+        if(a3)
+        {
+          gamma=a3;
+        }
+      }
+      if(s3&&s1&&a3)
+      {
+        if(s2)
+        {
+          a=s2;
+        }
+        b=s3;
+        c=s1;
+        if(a2)
+        {
+          alpha=a2;
+        }
+        beta=a3;
+        if(a1)
+        {
+          gamma=a1;
+        }
+      }
+      //Now solve
+      sin(*gamma)=((*c)/(*b))*sin(*beta);
+      float D;
+      D=((*c)/(*b))*sin(*beta);
+      if(D>1)
+      {
+        cout << "No triangle exists." << endl;
+      }
+      if(D==1)
+      {
+        *gamma=90;
+      }
+      if(D<1)
+      {
+        *gamma=asin(D);
+        //we specifically chose gamma to be acute
+      }
+      *alpha=180-*beta-*gamma;
+      *a = ((*b)*(sin(*alpha)/sin(*beta)));
+    }
 
   }
