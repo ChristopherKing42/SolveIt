@@ -24,7 +24,9 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
   if(*s1==*s2&&*s2==*s3)
   {
     //equilateral triangles always have 60 degree angles
-    *a1=*a2=*a3=60;
+    *a1=60;
+    *a2=60;
+    *a3=60;
   }
   //SSS - 3 sides and no angles
   if(!a1&&!a2&&!a3&&s1&&s2&&s3)
