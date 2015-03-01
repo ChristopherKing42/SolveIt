@@ -7,8 +7,14 @@ void triangle_solver(float*,float*,float*,float*,float*,float*);//Prototype func
 
 int main()
 {
-  //nothing here yet
-  cout << "Congratulations! You successfully compiled this. However, main does nothing but say this message, so this program doesn't really do anything yet. Oh well!" << endl;
+    float *a1 = NULL;
+    float *a2 = NULL;
+    float *a3 = NULL;
+    float *s1 = NULL;
+    float *s2 = NULL;
+    float *s3 = NULL;
+    triangle_solver(a1,a2,a3,s1,s2,s3);
+    cout << "Done" << endl;
     return 0;
 }
 
