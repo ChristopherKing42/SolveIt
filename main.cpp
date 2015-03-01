@@ -21,7 +21,7 @@ int main()
 void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s3)
 {
   //BASIC SOLVING METHODS
-  if(s1==s2==s3)
+  if(*s1==*s2&&*s2==*s3)
   {
     //equilateral triangles always have 60 degree angles
     *a1=*a2=*a3=60;
