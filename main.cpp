@@ -39,15 +39,15 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
 
     if(!a1&&s1&&s2&&s3)//if a1 isnt already found, find it
     {
-      a1=acos((pow(s2,2)+pow(s3,2)-pow(s1,2))/(2*s2*s3));
+      *a1=acos((pow(*s2,2)+pow(*s3,2)-pow(*s1,2))/(2*(*s2)*(*s3)));
     }
     if(!a2&&s1&&s2&&s3)//if a2 isnt already found, find it
     {
-      a2=acos((pow(s1,2)+pow(s3,2)-pow(s2,2))/(2*s1*s3));
+      *a2=acos((pow(*s1,2)+pow(*s3,2)-pow(*s2,2))/(2*(*s1)*(*s3)));
     }
     if(!a3&&s1&&s2&&s3)//if a3 isnt found, find
     {
-      a3=(180-a1-a2);
+      *a3=180-*a1-*a2;
     }
 
     //SAS
@@ -56,15 +56,15 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
     {
       if(!s3)
       {
-        s3=(sqrt(pow(s1,2)+pow(s2,2)-2*s1*s2*cos(a3)));
+        *s3=(sqrt(pow(*s1,2)+pow(*s2,2)-2*(*s1)*(*s2)*cos(*a3)));
       }
       if(!a1)
       {
-        a1=acos((pow(s2,2)+pow(s3,2)-pow(s1,2))/2*s2*s3);
+        *a1=acos((pow(*s2,2)+pow(*s3,2)-pow(*s1,2))/2*(*s2)*(*s3));
       }
       if(!a2)
       {
-        a2=180-a1-a3;
+        *a2=180-*a1-*a3;
       }
     }
     if(s2&&s3&&a1)
@@ -72,15 +72,15 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
       //c is s1,a is s2,b is s3,alpha is a2,beta is a3,gamma is a1
       if(!s1)
       {
-        s1=(sqrt(pow(s2,2)+pow(s3,2)-2*s2*s3*cos(a1)));
+        *s1=(sqrt(pow(*s2,2)+pow(*s3,2)-2*(*s2)*(*s3)*cos(*a1)));
       }
       if(!a2)
       {
-        a2=acos((pow(s3,2)+pow(s1,2)-pow(s2,2))/2*s3*s1);
+        *a2=acos((pow(*s3,2)+pow(*s1,2)-pow(*s2,2))/2*(*s3)*(*s1));
       }
       if(!a3)
       {
-        a3=180-a1-a2;
+        *a3=180-*a1-*a2;
       }
     }
     if(s1&&s3&&a2)
@@ -88,15 +88,15 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
       //a is s3, b is s1,c is s2,alpha is a3,beta is a1, gamma is a2
       if(!s2)
       {
-        s2=(sqrt(pow(s3,2)+pow(s1,2)-2*s3*s1*cos(a2)));
+        *s2=(sqrt(pow(*s3,2)+pow(*s1,2)-2*(*s3)*(*s1)*cos(*a2)));
       }
       if(!a3)
       {
-      a3=acos((pow(s1,2)+pow(s2,2)-pow(s3,2))/2*s1*s2);
+      *a3=acos((pow(*s1,2)+pow(*s2,2)-pow(*s3,2))/2*(*s1)*(*s2));
       }
       if(!a1)
       {
-        a1=180-a2-a3;
+        *a1=180-*a2-*a3;
       }
     }
 
@@ -164,11 +164,11 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
       gamma=a2;
       }
       //Now that a,b,c,alpha,beta,gamma have been declared, we write general equations for those
-      c=sqrt(pow(a,2)+pow(b,2)-2*a*b*cos(gamma));
-      alpha=acos((pow(b,2)+pow(c,2)-pow(a,2))/2*b*c);
-      beta=180-alpha-gamma;
+      *c=sqrt(pow(*a,2)+pow(*b,2)-2*(*a)*(*b)*cos(*gamma));
+      *alpha=acos((pow(*b,2)+pow(*c,2)-pow(*a,2))/2*(*b)*(*c));
+      *beta=180-*alpha-*gamma;
       //Now we have solved generally, so we return c,alpha,and beta to their specific cases
-      switch(returnmode)
+      /*switch(returnmode)
       {
         case 1:
         s3=c;
@@ -184,7 +184,7 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
         s2=c;
         a3=alpha;
         a1=beta;
-      }
+      }*/
     }//end of ALT METHOD
 
 
