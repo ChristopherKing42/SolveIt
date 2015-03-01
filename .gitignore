@@ -28,6 +28,8 @@
 *.app
 
 # Code::Blocks
-*.depend  
-*.layout 
+*.depend
+*.layout
 /bin
+.DS_Store
+makefile
