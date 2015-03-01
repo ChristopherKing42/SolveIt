@@ -7,47 +7,47 @@ void triangle_solver(float*,float*,float*,float*,float*,float*);//Prototype func
 
 int main()
 {
-    float a1,a2,a3,s1,s2,s3;
+    float *a1,*a2,*a3,*s1,*s2,*s3;
     int yn;//i dont care enough to test for valid inputs because this is just for debug purposes, so please don't crash this...
     cout << "Use 0 for no, 1 for yes for the following questions." << endl;
     cout << "Do you want to input a1?" << endl;
     cin>>yn;
     if(yn==1)
     {
-      cin>>a1;
+      cin>>*a1;
     }
     cout << "Do you want to input a2?" << endl;
     cin>>yn;
     if(yn==1)
     {
-      cin>>a2;
+      cin>>*a2;
     }
     cout << "Do you want to input a3?" << endl;
     cin>>yn;
     if(yn==1)
     {
-      cin>>a3;
+      cin>>*a3;
     }
     cout << "Do you want to input s1?" << endl;
     cin>>yn;
     if(yn==1)
     {
-      cin>>s1;
+      cin>>*s1;
     }
     cout << "Do you want to input s2?" << endl;
     cin>>yn;
     if(yn==1)
     {
-      cin>>s2;
+      cin>>*s2;
     }
     cout << "Do you want to input s3?" << endl;
     cin>>yn;
     if(yn==1)
     {
-      cin>>s3;
+      cin>>*s3;
     }
     cout << "Done! Now on to the solver." << endl;
-    triangle_solver(&a1,&a2,&a3,&s1,&s2,&s3);
+    triangle_solver(a1,a2,a3,s1,s2,s3);
     cout << "End of program" << endl;
     return 0;
 }
