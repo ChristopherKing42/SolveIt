@@ -7,7 +7,8 @@ void triangle_solver(float,float,float,float,float,float);//Prototype function f
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    float a1,a2,a3,s1,s2,s3;
+    cin >> a1; cin >> a2; cin >> a3; cin >> s1; cin >> s2; cin >> s3;
     return 0;
 }
 
