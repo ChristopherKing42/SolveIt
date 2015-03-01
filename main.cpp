@@ -21,7 +21,7 @@ int main()
 void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s3)
 {
   //BASIC SOLVING METHODS
-  
+
   //SSS - 3 sides and no angles
   if(!a1&&!a2&&!a3&&s1&&s2&&s3)
   {
@@ -308,6 +308,16 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
       //AAA - impossible
       cout << "Not possible." << endl;
     }
+    if(a1&&a2&&a3)
+    {
+      float atotal;
+      atotal = (*a1)+(*a2)+(*a3);
+      if(atotal!=180)
+      {
+        cout << "Error: Angles do not add up to 180 degrees!" << endl;
+      }
+    }
+
     //output results for debug porpoises:
     cout << "a1: " << *a1 << endl;
     cout << "a2: " << *a2 << endl;
