@@ -285,7 +285,6 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
         }
       }
       //Now solve
-      sin(*gamma)=((*c)/(*b))*sin(*beta);
       float D;
       D=((*c)/(*b))*sin(*beta);
       if(D>1)
@@ -377,7 +376,7 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
         beta=a2;
         if(a3)
         {
-          gammma=a3;
+          gamma=a3;
         }
         if(s2)
         {
