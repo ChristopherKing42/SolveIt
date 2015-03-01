@@ -31,5 +31,8 @@
 
 *.depend
 *.layout
-makefile
 /bin
+
+#Compiling
+makefile
+main
