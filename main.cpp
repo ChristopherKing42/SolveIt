@@ -367,5 +367,66 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
     *a=(*c)*(sin(*alpha)/sin(*gamma));
     *b=(*c)*(sin(*beta)/sin(*gamma));
     }
-    
+    if((a1&&a2&&s1)||(a2&&a3&&s2)||(a3&&a1&&s3))
+    {
+      //AAS - 1 side, 1 adjacent angle and the opposite angle given
+      float *a,*b,*c,*alpha,*beta,*gamma;
+      if(a1&&a2&&s1)
+      {
+        alpha=a1;
+        beta=a2;
+        if(a3)
+        {
+          gammma=a3;
+        }
+        if(s2)
+        {
+          a=s2;
+        }
+        if(s3)
+        {
+          b=s3;
+        }
+        c=s1;
+      }
+      if(a2&&a3&&s2)
+      {
+        alpha=a2;
+        beta=a3;
+        if(a1)
+        {
+          gamma=a1;
+        }
+        if(s1)
+        {
+          a=s1;
+        }
+        if(s3)
+        {
+          b=s3;
+        }
+        c=s2;
+      }
+      if(a3&&a1&&s3)
+      {
+        alpha=a1;
+        beta=a3;
+        if(a2)
+        {
+          gamma=a2;
+        }
+        if(s1)
+        {
+          a=s1;
+        }
+        if(s2)
+        {
+          b=s2;
+        }
+        c=s3;
+      }
+      *gamma=180-(*alpha)-(*beta);
+      *a=(*c)*(sin(*alpha)/sin(*gamma));
+      *b=(*c)*(sin(*beta)/sin(*gamma));
+    }
   }
