@@ -28,6 +28,15 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
     *a1=acos((pow(*s2,2)+pow(*s3,2)-pow(*s1,2))/(2*(*s2)*(*s3)));
     *a2=acos((pow(*s1,2)+pow(*s3,2)-pow(*s2,2))/(2*(*s1)*(*s3)));
     *a3=180-*a1-*a2;
+    //output results for debug porpoises:
+    cout << "a1: " << *a1 << endl;
+    cout << "a2: " << *a2 << endl;
+    cout << "a3: " << *a3 << endl;
+    cout << "s1: " << *s1 << endl;
+    cout << "s2: " << *s2 << endl;
+    cout << "s3: " << *s3 << endl;
+    cout << "Done." << endl;
+    return;
   }
 
     if((s1&&s2&&a3)||(s2&&s3&&a1)||(s1&&s3&&a2))
@@ -92,6 +101,15 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
       *c=sqrt(pow(*a,2)+pow(*b,2)-2*(*a)*(*b)*cos(*gamma));
       *alpha=acos((pow(*b,2)+pow(*c,2)-pow(*a,2))/2*(*b)*(*c));
       *beta=180-*alpha-*gamma;
+      //output results for debug porpoises:
+      cout << "a1: " << *a1 << endl;
+      cout << "a2: " << *a2 << endl;
+      cout << "a3: " << *a3 << endl;
+      cout << "s1: " << *s1 << endl;
+      cout << "s2: " << *s2 << endl;
+      cout << "s3: " << *s3 << endl;
+      cout << "Done." << endl;
+      return;
     }
 
 
@@ -171,6 +189,15 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
       }
       *alpha=180-*beta-*gamma;
       *a = ((*b)*(sin(*alpha)/sin(*beta)));
+      //output results for debug porpoises:
+      cout << "a1: " << *a1 << endl;
+      cout << "a2: " << *a2 << endl;
+      cout << "a3: " << *a3 << endl;
+      cout << "s1: " << *s1 << endl;
+      cout << "s2: " << *s2 << endl;
+      cout << "s3: " << *s3 << endl;
+      cout << "Done." << endl;
+      return;
     }
 
 
@@ -236,6 +263,15 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
     *gamma=180-*alpha-*beta;
     *a=(*c)*(sin(*alpha)/sin(*gamma));
     *b=(*c)*(sin(*beta)/sin(*gamma));
+    //output results for debug porpoises:
+    cout << "a1: " << *a1 << endl;
+    cout << "a2: " << *a2 << endl;
+    cout << "a3: " << *a3 << endl;
+    cout << "s1: " << *s1 << endl;
+    cout << "s2: " << *s2 << endl;
+    cout << "s3: " << *s3 << endl;
+    cout << "Done." << endl;
+    return;
     }
 
 
@@ -300,6 +336,15 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
       *gamma=180-(*alpha)-(*beta);
       *a=(*c)*(sin(*alpha)/sin(*gamma));
       *b=(*c)*(sin(*beta)/sin(*gamma));
+      //output results for debug porpoises:
+      cout << "a1: " << *a1 << endl;
+      cout << "a2: " << *a2 << endl;
+      cout << "a3: " << *a3 << endl;
+      cout << "s1: " << *s1 << endl;
+      cout << "s2: " << *s2 << endl;
+      cout << "s3: " << *s3 << endl;
+      cout << "Done." << endl;
+      return;
     }
 
 
@@ -307,6 +352,15 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
     {
       //AAA - impossible
       cout << "Not possible." << endl;
+      //output results for debug porpoises:
+      cout << "a1: " << *a1 << endl;
+      cout << "a2: " << *a2 << endl;
+      cout << "a3: " << *a3 << endl;
+      cout << "s1: " << *s1 << endl;
+      cout << "s2: " << *s2 << endl;
+      cout << "s3: " << *s3 << endl;
+      cout << "Done." << endl;
+      return;
     }
     if(a1&&a2&&a3)
     {
