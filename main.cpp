@@ -7,12 +7,12 @@ void triangle_solver(float*,float*,float*,float*,float*,float*);//Prototype func
 
 int main()
 {
-    float a1 = 0;
-    float a2 = 0;
+    float a1 = 165.740769016;
+    float a2 = 4.60327339313;
     float a3 = 0;
-    float s1 = 2080.26370467;
-    float s2 = 885.569781141;
-    float s3 = 1327.17001098;
+    float s1 = 2094.57510632;
+    float s2 = 0;
+    float s3 = 0;
     triangle_solver(&a1,&a2,&a3,&s1,&s2,&s3);
     cout << "Done" << endl;
     return 0;
@@ -40,11 +40,11 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
     return;
   }
 
-    if((s1&&s2&&a3)||(s2&&s3&&a1)||(s1&&s3&&a2))
+    if((*s1&&*s2&&*a3)||(*s2&&*s3&&*a1)||(*s1&&*s3&&*a2))
     {
       //SAS - 2 sides and an included angle
       float *a,*b,*c,*alpha,*beta,*gamma;
-      if(s1&&s2&&a3)
+      if(*s1&&*s2&&*a3)
       {
         a=s1;
         b=s2;
@@ -62,7 +62,7 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
         }
         gamma=a3;
       }
-      if(s2&&s3&&a1)
+      if(*s2&&*s3&&*a1)
       {
         a=s2;
         b=s3;
@@ -80,7 +80,7 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
         }
         gamma=a1;
       }
-      if(s1&&s3&&a2)
+      if(*s1&&*s3&&*a2)
       {
       a=s3;
       b=s1;
@@ -114,11 +114,11 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
     }
 
 
-    if((s1&&s2&&a1)||(s2&&s3&&a2)||(s3&&s1&&a3))
+    if((*s1&&*s2&&*a1)||(*s2&&*s3&&*a2)||(*s3&&*s1&&*a3))
     {
       //SSA - 2 sides and a non-included angle
       float *a,*b,*c,*alpha,*beta,*gamma;
-      if(s1&&s2&&a1)
+      if(*s1&&*s2&&*a1)
       {
         if(s3)
         {
@@ -136,7 +136,7 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
           gamma=a2;
         }
       }
-      if(s2&&s3&&a2)
+      if(*s2&&*s3&&*a2)
       {
         if(s1)
         {
@@ -154,7 +154,7 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
           gamma=a3;
         }
       }
-      if(s3&&s1&&a3)
+      if(*s3&&*s1&&*a3)
       {
         if(s2)
         {
@@ -202,11 +202,11 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
     }
 
 
-    if((a1&&s3&&a2)||(a2&&s1&&a3)||(a1&&s2&&a3))
+    if((*a1&&*s3&&*a2)||(*a2&&*s1&&*a3)||(*a1&&*s2&&*a3))
     {
       //ASA - a side and 2 adjacent angles given
       float *a,*b,*c,*alpha,*beta,*gamma;
-      if(a1&&s3&&a2)
+      if(*a1&&*s3&&*a2)
       {
         if(s1)
         {
@@ -224,7 +224,7 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
           gamma=a3;
         }
       }
-      if(a2&&s1&&a3)
+      if(*a2&&*s1&&*a3)
       {
         if(s2)
         {
@@ -242,7 +242,7 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
           gamma=a1;
         }
       }
-      if(a1&&s2&&a3)
+      if(*a1&&*s2&&*a3)
       {
         if(s3)
         {
@@ -276,11 +276,11 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
     }
 
 
-    if((a1&&a2&&s1)||(a2&&a3&&s2)||(a3&&a1&&s3))
+    if((*a1&&*a2&&*s1)||(*a2&&*a3&&*s2)||(*a3&&*a1&&*s3))
     {
       //AAS - 1 side, 1 adjacent angle and the opposite angle given
       float *a,*b,*c,*alpha,*beta,*gamma;
-      if(a1&&a2&&s1)
+      if(*a1&&*a2&&*s1)
       {
         alpha=a1;
         beta=a2;
@@ -298,7 +298,7 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
         }
         c=s1;
       }
-      if(a2&&a3&&s2)
+      if(*a2&&*a3&&*s2)
       {
         alpha=a2;
         beta=a3;
@@ -316,7 +316,7 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
         }
         c=s2;
       }
-      if(a3&&a1&&s3)
+      if(*a3&&*a1&&*s3)
       {
         alpha=a1;
         beta=a3;
@@ -349,7 +349,7 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
     }
 
 
-    if(a1&&a2&&a3&&!s1&&!s2&&!s3)
+    if(*a1&&*a2&&*a3&&!*s1&&!*s2&&!*s3)
     {
       //AAA - impossible
       cout << "Not possible." << endl;
@@ -363,7 +363,7 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
       cout << "Done." << endl;
       return;
     }
-    if(a1&&a2&&a3)
+    if(*a1&&*a2&&*a3)
     {
       float atotal;
       atotal = (*a1)+(*a2)+(*a3);
