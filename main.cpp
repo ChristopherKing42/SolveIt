@@ -48,54 +48,39 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
       {
         a=s1;
         b=s2;
-        if(s3)
-        {
           c=s3;
-        }
-        if(a1)
-        {
+
+
           alpha=a1;
-        }
-        if(a2)
-        {
+
           beta=a2;
-        }
+
         gamma=a3;
-      }
+
       if(*s2&&*s3&&*a1)
       {
         a=s2;
         b=s3;
-        if(s1)
-        {
+
           c=s1;
-        }
-        if(a2)
-        {
+
           alpha=a2;
-        }
-        if(a3)
-        {
+
           beta=a3;
-        }
+
         gamma=a1;
       }
       if(*s1&&*s3&&*a2)
       {
       a=s3;
       b=s1;
-      if(s2)
-      {
+
         c=s2;
-      }
-      if(a3)
-      {
+
         alpha=a3;
-      }
-      if(a1)
-      {
+
         beta=a1;
-      }
+
       gamma=a2;
       }
       //Now that a,b,c,alpha,beta,gamma have been declared, we write general equations for those
@@ -120,57 +105,49 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
       float *a,*b,*c,*alpha,*beta,*gamma;
       if(*s1&&*s2&&*a1)
       {
-        if(s3)
-        {
+
           a=s3;
-        }
+
         b=s1;
         c=s2;
-        if(a3)
-        {
+
           alpha=a3;
-        }
+
         beta=a1;
-        if(a2)
-        {
+
           gamma=a2;
-        }
+
       }
       if(*s2&&*s3&&*a2)
       {
-        if(s1)
-        {
+
           a=s1;
-        }
+
         b=s2;
         c=s3;
-        if(a1)
-        {
+
           alpha=a1;
-        }
+
         beta=a2;
-        if(a3)
-        {
+
+
           gamma=a3;
-        }
+
       }
       if(*s3&&*s1&&*a3)
       {
-        if(s2)
-        {
+
           a=s2;
-        }
+
         b=s3;
         c=s1;
-        if(a2)
-        {
+
           alpha=a2;
-        }
+
         beta=a3;
-        if(a1)
-        {
+
           gamma=a1;
-        }
+
       }
       //Now solve
       float D;
@@ -208,57 +185,46 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
       float *a,*b,*c,*alpha,*beta,*gamma;
       if(*a1&&*s3&&*a2)
       {
-        if(s1)
-        {
+
           a=s1;
-        }
-        if(s2)
-        {
+
+
           b=s2;
-        }
+
         c=s3;
         alpha=a1;
         beta=a2;
-        if(a3)
-        {
+
           gamma=a3;
-        }
+
       }
       if(*a2&&*s1&&*a3)
       {
-        if(s2)
-        {
+
           a=s2;
-        }
-        if(s3)
-        {
+
           b=s3;
-        }
+
         c=s1;
         alpha=a2;
         beta=a3;
-        if(a1)
-        {
+
           gamma=a1;
-        }
+
       }
       if(*a1&&*s2&&*a3)
       {
-        if(s3)
-        {
+
           a=s3;
-        }
-        if(s1)
-        {
+
           b=s1;
-        }
+
         c=s2;
         alpha=a3;
         beta=a1;
-        if(a2)
-        {
+
           gamma=a2;
-        }
+
       }
     //Now solve:
     *gamma=180-*alpha-*beta;
@@ -284,54 +250,40 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
       {
         alpha=a1;
         beta=a2;
-        if(a3)
-        {
+
           gamma=a3;
-        }
-        if(s2)
-        {
+
           a=s2;
-        }
-        if(s3)
-        {
+
+
           b=s3;
-        }
+
         c=s1;
       }
       if(*a2&&*a3&&*s2)
       {
         alpha=a2;
         beta=a3;
-        if(a1)
-        {
+
           gamma=a1;
-        }
-        if(s1)
-        {
+
           a=s1;
-        }
-        if(s3)
-        {
+
           b=s3;
-        }
+
         c=s2;
       }
       if(*a3&&*a1&&*s3)
       {
         alpha=a1;
         beta=a3;
-        if(a2)
-        {
+
           gamma=a2;
-        }
-        if(s1)
-        {
+
           a=s1;
-        }
-        if(s2)
-        {
+
           b=s2;
-        }
+        
         c=s3;
       }
       *gamma=180-(*alpha)-(*beta);
