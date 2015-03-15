@@ -216,8 +216,8 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
             c=s3;
         }
         *gamma=180-(*alpha)-(*beta);
-        *a=(*c)*(sin(*alpha)/sin(*gamma));
-        *b=(*c)*(sin(*beta)/sin(*gamma));
+        *a=(*c)*(sin(*alpha*M_PI/180)/sin(*gamma*M_PI/180));
+        *b=(*c)*(sin(*beta*M_PI/180)/sin(*gamma*M_PI/180));
         //output results for debug porpoises:
         cout << "a1: " << *a1 << endl;
         cout << "a2: " << *a2 << endl;
