@@ -7,9 +7,9 @@ void triangle_solver(float*,float*,float*,float*,float*,float*);//Prototype func
 
 int main()
 {
-    float a1;
-    float a2;
-    float a3;
+    float a1 = 0;
+    float a2 = 0;
+    float a3 = 0;
     float s1 = 2080.26370467;
     float s2 = 885.569781141;
     float s3 = 1327.17001098;
@@ -23,9 +23,10 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
   //BASIC SOLVING METHODS
 
   //SSS - 3 sides and no angles
-  if(!a1&&!a2&&!a3&&s1&&s2&&s3)
+  if(!*a1&&!*a2&&!*a3&&*s1&&*s2&&*s3)
   {
-    *a1=arccos((pow(*s2,2)+pow(*s3,2)-pow(*s1,2))/(2*(*s2)*(*s3)));
+    cout << s2 << endl;
+    *a1=acos((pow(*s2,2)+pow(*s3,2)-pow(*s1,2))/(2*(*s2)*(*s3)));
     *a2=acos((pow(*s1,2)+pow(*s3,2)-pow(*s2,2))/(2*(*s1)*(*s3)));
     *a3=180-*a1-*a2;
     //output results for debug porpoises:
