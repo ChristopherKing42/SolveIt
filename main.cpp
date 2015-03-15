@@ -7,12 +7,12 @@ void triangle_solver(float*,float*,float*,float*,float*,float*);//Prototype func
 
 int main()
 {
-    float a1 = 60.0;
-    float a2 = 0;
-    float a3 = 0;
-    float s1 = 0;
-    float s2 = 2.0;
-    float s3 = 2.0;
+    float a1;
+    float a2;
+    float a3;
+    float s1 = 1720.11668007;
+    float s2 = 311.355139483;
+    float s3 = 1413.33696394;
     triangle_solver(&a1,&a2,&a3,&s1,&s2,&s3);
     cout << "Done" << endl;
     return 0;
