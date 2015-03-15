@@ -47,6 +47,7 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
             alpha=a1;
             beta=a2;
             gamma=a3;
+          }
             if(*s2&&*s3&&*a1)
             {
                 a=s2;
@@ -78,7 +79,6 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
             cout << "s3: " << *s3 << endl;
             cout << "Done." << endl;
             return;
-        }
       }
         if((*s1&&*s2&&*a1)||(*s2&&*s3&&*a2)||(*s3&&*s1&&*a3))
         {
