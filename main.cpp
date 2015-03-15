@@ -79,6 +79,7 @@ void triangle_solver(float *a1,float *a2,float *a3,float *s1,float *s2, float *s
             cout << "Done." << endl;
             return;
         }
+      }
         if((*s1&&*s2&&*a1)||(*s2&&*s3&&*a2)||(*s3&&*s1&&*a3))
         {
             //SSA - 2 sides and a non-included angle
